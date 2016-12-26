@@ -1,3 +1,12 @@
+stsbl-iserv-homepage (16.12.26-1) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed i10n.
+
+  [ Stadtteilschule Blankenese ]
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Mon, 26 Dec 2016 06:32:52 +0100
+
 stsbl-iserv-homepage (16.12.26-0) experimental; urgency=low
 
   * Initial release.
