@@ -1,0 +1,21 @@
+priv.hp_enabled:
+module		User and Group Homepages
+title		User Homepage enabled
+description	Use this privilege to control wether a user's homepage is reachable or not.
+invert		true
+
+flag.hp_enabled:
+module		User and Group Homepages
+title       	Group Homepage enabled
+description 	Use this setting to control wether a group's homepage is reachable or not.
+invert		true
+
+priv.hp_from_inet:
+module		User and Group Homepages
+title		User Homepage always reachable from internet
+description	The homepages of the users with this privilege are always reachable from internet independently from the limitation of homepages to the LAN.
+
+flag.hp_from_inet:
+module		User and Group Homepages
+title		Group Homepage always reachable from internet
+description	The homepages of the groups with this setting are always reachable from internet independently from the limitation of homepages to the LAN.

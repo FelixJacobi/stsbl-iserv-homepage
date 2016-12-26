@@ -1,0 +1,74 @@
+#!/usr/bin/perl -T -CSDAL
+use warnings;
+use strict;
+use IServ::DB;
+
+# hold the compiled queries
+my $q;
+my $privq;
+
+# disable output buffering
+$| = 1;
+
+sub prepare()
+{
+  # compile the query
+  #
+  # select all users which are enabled and except the one which do not have the privilege hp_enabled.
+  # also select all groups except the one which do not have the flag hp_enabled.
+  # also exclude deleted users and groups.
+  $q = DBH->prepare("
+      SELECT 1 FROM users u WHERE u.act = ? AND stat = 'a' AND u.deleted IS NULL AND EXISTS (SELECT 1 FROM users_priv p WHERE p.privilege = 'hp_enabled' AND p.act = u.act) UNION
+      SELECT 1 FROM groups g WHERE g.act = ? AND g.deleted IS NULL AND EXISTS (SELECT 1 FROM groups_flag f WHERE f.act = g.act AND f.flag = 'hp_enabled')
+      ");
+}
+
+sub query($)
+{
+  my ($act) = @_;
+  my $res;
+
+  eval
+  {
+    $res = $q->execute($act, $act);
+    # throw away the results without fetching them;
+    # we're only interested in the row count
+    $q->finish;
+  };
+
+  if (!defined $res)
+  {
+    # an error occurred; assume that the DB was down, reconnect and try again
+    eval
+    {
+      IServ::DB::Disconnect;
+      prepare;
+      $res = $q->execute($act, $act);
+      $q->finish;
+    };
+  }
+
+  return defined $res? int $res: undef;
+}
+
+while (<STDIN>)
+{
+  # use magic output strings to avoid additional RewriteRules in apache conf
+  chomp;
+  my $q = query $_;
+  if (not defined $q)
+  {
+    # apache output: 400 Bad Request
+    print "FAIL\n";
+  }
+  elsif ($q != 1)
+  {
+    # apache output: 403 Forbidden
+    print "/etc/debian_version\n";
+  }
+  else
+  {
+    printf "/~%s/Homepage\n", lc $_;
+  }
+}
+

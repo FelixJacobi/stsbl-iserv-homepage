@@ -1,0 +1,3 @@
+# check apache config every 15 minutes to apply changed privileges and flags
+*/15 *  * * *   root    iservchk -a apache
+

@@ -1,0 +1,26 @@
+msgid "User and Group Homepages"
+msgstr "Benutzer- und Gruppenhomepages"
+
+msgid "Group Homepage enabled"
+msgstr "Gruppenhomage aktiviert"
+
+msgid "Use this setting to control wether a group's homepage is reachable or not."
+msgstr "Benutzen sie diese Einstellung, um zu steuern ob die Homepage einer Gruppe erreichbar ist oder nicht."
+
+msgid "User Homepage enabled"
+msgstr "Benutzerhomepage aktiviert"
+
+msgid "Use this privilege to control wether a user's homepage is reachable or not."
+msgstr "Benutzen sie dieses Recht, um zu steuern wessen Homepage erreichbar ist oder nicht."
+
+msgid "User Homepage always reachable from internet"
+msgstr "Benutzerhomepage immer aus dem Internet erreichbar"
+
+msgid "The homepages of the users with this privilege are always reachable from internet independently from the limitation of homepages to the LAN."
+msgstr "Die Homepages der Benutzer mit diesem Recht sind immer aus dem Internet erreichbar unabhängig von der Limitierung von Homepages auf das LAN."
+
+msgid "Group Homepage always reachable from internet"
+msgstr "Gruppenhomepage immer aus dem Internet erreichbar"
+
+msgid "The homepages of the groups with this setting are always reachable from internet independently from the limitation of homepages to the LAN."
+msgstr "Die Homepages der Gruppen mit dieser Einstellung sind immer aus dem Internet unabhängig von der Limitierung von Homepages auf das LAN."

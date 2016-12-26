@@ -1,0 +1,19 @@
+Source: stsbl-iserv-homepages
+Section: misc
+Priority: extra
+Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://it.stsbl.de/documentation/mods/stsbl-iserv-homepage
+
+Package: stsbl-iserv-homepage
+Architecture: all
+Depends: iserv-portal
+Description: Homepage-Modul für IServ
+ Das Homepage-Modul wertet die in den Portalserver eingebaute IServ Benutzer- und Gruppen-Homepagefunktion um zusätzliche Funktionen auf.
+ .
+ Mit einem Benutzerrecht kann gesteuert werden, welche Benutzerhomepages aktiviert sind. Gleiches ist über ein Gruppenmerkmal für die Gruppenhomepages möglich.
+ Außerdem ist festlegbar, welche Homepages auch aus dem Internet erreichbar sind, wenn Gruppen- und Benutzerhomepages über die IServ-Konfiguration generell auf das LAN beschränkt sind.
+ .
+ Dieses Paket ersetzt das alte Modul IServ Homepages (erweitert) (iserv-hpa). Die Funktion für die Nutzung von PHP auf Benutzer- und Gruppenhomepages wurde in ein separates Modul ausgelagert.
+Tag: suite::iserv:portal, role::plugin, status::highlighted, implemented-in::perl
