@@ -2,7 +2,7 @@ msgid "User and Group Homepages"
 msgstr "Benutzer- und Gruppenhomepages"
 
 msgid "Group Homepage enabled"
-msgstr "Gruppenhomage aktiviert"
+msgstr "Gruppenhomepage aktiviert"
 
 msgid "Use this setting to control wether a group's homepage is reachable or not."
 msgstr "Benutzen sie diese Einstellung, um zu steuern ob die Homepage einer Gruppe erreichbar ist oder nicht."
