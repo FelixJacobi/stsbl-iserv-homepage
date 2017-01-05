@@ -1,3 +1,13 @@
+stsbl-iserv-homepage (17.01.05-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Updated debian copyright.
+  * Hide output of cron job to prevent cron to send e-mails.
+
+  [ Stadtteilschule Blankenese ]
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Thu, 05 Jan 2017 17:13:19 +0100
+
 stsbl-iserv-homepage (16.12.26-1) experimental; urgency=medium
 
   [ Felix Jacobi ]
