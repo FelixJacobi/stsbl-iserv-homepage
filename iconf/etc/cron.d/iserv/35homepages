@@ -1,3 +1,6 @@
 # check apache config every 15 minutes to apply changed privileges and flags
-*/15 *  * * *   root    iservchk -a apache
+#
+# Hide output to prevent sending of e-mails every 15 minutes to the admins
+# for example if there is an ambiguous translation :/ .
+*/15 *  * * *   root    iservchk -a apache &> /dev/null
 
