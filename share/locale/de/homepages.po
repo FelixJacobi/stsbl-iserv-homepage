@@ -5,13 +5,13 @@ msgid "Group Homepage enabled"
 msgstr "Gruppenhomepage aktiviert"
 
 msgid "Use this setting to control wether a group's homepage is reachable or not."
-msgstr "Benutzen sie diese Einstellung, um zu steuern ob die Homepage einer Gruppe erreichbar ist oder nicht."
+msgstr "Benutzen Sie diese Einstellung, um zu steuern ob die Homepage einer Gruppe erreichbar ist oder nicht."
 
 msgid "User Homepage enabled"
 msgstr "Benutzerhomepage aktiviert"
 
 msgid "Use this privilege to control wether a user's homepage is reachable or not."
-msgstr "Benutzen sie dieses Recht, um zu steuern wessen Homepage erreichbar ist oder nicht."
+msgstr "Benutzen Sie dieses Recht, um zu steuern wessen Homepage erreichbar ist oder nicht."
 
 msgid "User Homepage always reachable from internet"
 msgstr "Benutzerhomepage immer aus dem Internet erreichbar"
