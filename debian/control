@@ -16,4 +16,4 @@ Description: Homepage-Modul für IServ
  Außerdem ist festlegbar, welche Homepages auch aus dem Internet erreichbar sind, wenn Gruppen- und Benutzerhomepages über die IServ-Konfiguration generell auf das LAN beschränkt sind.
  .
  Dieses Paket ersetzt das alte Modul IServ Homepages (erweitert) (iserv-hpa). Die Funktion für die Nutzung von PHP auf Benutzer- und Gruppenhomepages wurde in ein separates Modul ausgelagert.
-Tag: suite::iserv:portal, role::plugin, status::highlighted, implemented-in::perl
+Tag: suite::iserv:portal, role::plugin, implemented-in::perl
