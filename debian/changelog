@@ -1,3 +1,10 @@
+stsbl-iserv-homepage (17.03.04-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed l10n.
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 04 Mar 2017 23:37:32 +0100
+
 stsbl-iserv-homepage (17.01.05-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
