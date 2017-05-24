@@ -19,3 +19,12 @@ flag.hp_from_inet:
 module		User and Group Homepages
 title		Group Homepage always reachable from internet
 description	The homepages of the groups with this setting are always reachable from internet independently from the limitation of homepages to the LAN.
+
+priv.hp_ssl_cert:
+module		User and Group Homepages
+description	Include User Homepage in SSL certificate
+
+flag.hp_ssl_cert:
+module          User and Group Homepages
+title           Include Group Homepage in SSL certificate
+description	The host names of the Homepages of the groups will included in the SSL certificate as alternative name.
