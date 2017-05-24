@@ -1,0 +1,7 @@
+HomepageExternalAuthAccess:
+name            Allow access from outside of the LAN with Authentification
+description     Allow access to homepages from outside of the LAN, but protect access with password. Note, that the password will transfered unencrypted if the homepage is not covered by the SSL certificate.
+type            bool
+group           Module: User and Group Homepages
+default         false
+

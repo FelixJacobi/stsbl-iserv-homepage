@@ -1,7 +1,7 @@
 #bin/*		usr/bin
 #bundle/*	usr/share/iserv/src/IServ
 #*Bundle	usr/share/iserv/src/IServ
-#config/*	usr/share/iserv/iservcfg/config
+config/*	usr/share/iserv/iservcfg/config
 #db/*		usr/share/iserv/db
 iconf/*		usr/share/iserv/iconf
 #iservchk/*	usr/share/iserv/iconf/etc/iserv/chk.d
