@@ -74,6 +74,10 @@ sub external_auth() {
   print "      Require valid-user\n";
   print "      # Allow access to always allowed group homepages\n";
   print "      Require expr %{HTTP_HOST} =~ /(".join("|", @groups).").$Servername/\n";
+  print "      # Always allow www homepage\n";
+  print "      Require expr %{HTTP_HOST} =~ /www.$Servername/\n";
+  print "      Require expr %{HTTP_HOST} =~ /$Servername/\n";
+  print "      Require expr %{HTTP_HOST} =~ /iserv.$Servername/\n";
   print "      # Allow access from LAN\n";
   foreach my $iprange (@LAN)
   {
