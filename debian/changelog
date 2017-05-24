@@ -1,9 +1,17 @@
+stsbl-iserv-homepage (17.05.24-0) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Removed highlighted status.
+  * Do not import config (already done by IServ::Conf).
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Wed, 24 May 2017 06:50:29 +0200
+
 stsbl-iserv-homepage (17.03.04-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
   * Fixed l10n.
 
- -- Felix Jacobi <felix.jacobi@stsbl.de>  Sat, 04 Mar 2017 23:37:32 +0100
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Sat, 04 Mar 2017 23:37:32 +0100
 
 stsbl-iserv-homepage (17.01.05-0) experimental; urgency=medium
 
