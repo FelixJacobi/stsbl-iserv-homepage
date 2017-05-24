@@ -8,13 +8,8 @@ use IServ::DB;
 my @users = IServ::DB::SelectCol("SELECT act FROM users_priv WHERE privilege = 'hp_from_inet'");
 my @groups = IServ::DB::SelectCol("SELECT act FROM groups WHERE deleted IS NULL AND act IN (SELECT act FROM groups_flag WHERE flag = 'hp_from_inet')");
 
-my $fn = "/var/lib/iserv/config/config.pm";
-my $UserHomepages = 1;
+my $UserHomepages = $conf->{UserHomepages};
 
-if (-r $fn) {
-  require $fn;
-  $UserHomepages = $conf->{UserHomepages};
-}
 
 sub group_config() {
   print "  # Group Homepages which are always allowed via hp_from_inet flag.\n";
