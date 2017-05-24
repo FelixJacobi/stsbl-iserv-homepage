@@ -8,7 +8,7 @@ Homepage: https://it.stsbl.de/documentation/mods/stsbl-iserv-homepage
 
 Package: stsbl-iserv-homepage
 Architecture: all
-Depends: iserv-portal
+Depends: iserv-portal, stsbl-iserv-apache-basic-authentification
 Description: Homepage-Modul für IServ
  Das Homepage-Modul wertet die in den Portalserver eingebaute IServ Benutzer- und Gruppen-Homepagefunktion um zusätzliche Funktionen auf.
  .
