@@ -1,0 +1,8 @@
+#!/usr/bin/perl -CSDAL
+
+use warnings;
+use strict;
+use IServ::DB;
+
+my $val = IServ::DB::SelectVal "SELECT invert FROM group_flag_def WHERE flag = ?", "hp_ssl_cert"; 
+exit $val;

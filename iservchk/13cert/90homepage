@@ -1,0 +1,2 @@
+Test "flag hp_ssl_cert is not inverted"
+  "/usr/lib/iserv/homepage_flag_not_inverted"
