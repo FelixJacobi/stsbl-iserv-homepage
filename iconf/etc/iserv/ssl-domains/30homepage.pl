@@ -21,7 +21,7 @@ my @sql_params;
 my $val = IServ::DB::SelectVal "SELECT invert FROM group_flag_def WHERE flag = ?", "hp_ssl_cert";
 
 # flag does not support invert
-if ($val eq 1)
+if (if defined $val and $val eq 1)
 {
   #warn "inverting is not supported for flag hp_ssl_cert.\n";
   $sql = "SELECT act FROM users_priv WHERE privilege = ? AND act != ?";
