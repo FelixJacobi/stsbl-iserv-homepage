@@ -27,4 +27,4 @@ description	Include User Homepage in SSL certificate
 flag.hp_ssl_cert:
 module          User and Group Homepages
 title           Include Group Homepage in SSL certificate
-description	The host names of the Homepages of the groups will included in the SSL certificate as alternative name.
+description	The host names of the Homepages of the groups will included in the SSL certificate as alternative name. This flag does not support the setting "All groups except the following".
