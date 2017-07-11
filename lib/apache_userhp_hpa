@@ -3,9 +3,8 @@ use warnings;
 use strict;
 use IServ::DB;
 
-# hold the compiled queries
+# hold the compiled query
 my $q;
-my $privq;
 
 # disable output buffering
 $| = 1;
@@ -36,7 +35,7 @@ sub query($)
     $q->finish;
   };
 
-  if (!defined $res)
+  if (not defined $res)
   {
     # an error occurred; assume that the DB was down, reconnect and try again
     eval
