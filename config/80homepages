@@ -1,6 +1,6 @@
 HomepageExternalAuthAccess:
 name            Allow access to the homepages from outside of the LAN with Authentification
-description     The access to the homepages from outside of the LAN will granted, but will be protected with IServ account and password. Note, that the password will transfered unencrypted if the homepage is not covered by the SSL certificate. This setting will not take effect if the access is not limited to the LAN or the homepages are already disabled.
+description     The access to the homepages from outside of the LAN will granted, but will be protected with IServ account and password. This setting will only have effect on domains covered by the SSL certificate. This setting will not take effect if the access is not limited to the LAN or the homepages are already disabled.
 type            bool
 group           Module: User and Group Homepages
 default         false

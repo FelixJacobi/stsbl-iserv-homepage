@@ -4,6 +4,7 @@ use warnings;
 use strict;
 use IServ::Conf;
 use IServ::DB;
+use List::MoreUtils qw(uniq);
 
 my @users = IServ::DB::SelectCol("SELECT act FROM users_priv WHERE privilege = 'hp_from_inet'");
 my @groups = IServ::DB::SelectCol("SELECT act FROM groups WHERE deleted IS NULL AND act IN (SELECT act FROM groups_flag WHERE flag = 'hp_from_inet')");
@@ -44,7 +45,6 @@ sub external_auth() {
   print "\n";
   print "  # Allow external access to user and group homepages with HTTP Basic Login.\n";
   print "  <Directory /home/*/Homepage/>\n";
-  print "    Order allow,deny\n";
   print "    Allow from all\n";
   print "    AuthType Basic\n";
   print "    AuthName \"Please sign-in with your IServ account to access this homepage\"\n";
@@ -52,7 +52,24 @@ sub external_auth() {
   print "    AuthExternal iserv\n";
   print "    # Require LAN ip or login\n";
   print "    <RequireAny>\n";
-  print "      Require valid-user\n";
+  print "      <RequireAll>\n";
+
+  print "        # only allow group homepages in ssl cert\n";
+  my @ssl_users = uniq(IServ::DB::SelectCol "SELECT act FROM users_priv WHERE privilege = ".
+    "'hp_ssl_cert' AND act NOT IN (SELECT act FROM users WHERE deleted IS NULL AND act IN ".
+    "(SELECT act FROM users_priv WHERE privilege = ".
+    "'hp_from_inet'))");
+  if (@ssl_users > 0)
+  {
+    print "        Require expr %{HTTP_HOST} =~ /^(".join("|", @ssl_users).").$Servername\$/\n";
+    for (@AliasDomains)
+    {
+      print "        Require expr %{HTTP_HOST} =~ /^(".join("|", @groups).").$_\$/\n";
+    }
+    print "        Require valid-user\n";
+    print "      </RequireAll>\n";
+  }
+
   if (@users > 0) 
   {
     print "      # Allow access to always allowed user homepages\n";
@@ -71,7 +88,6 @@ sub external_auth() {
   print "  </Directory>\n";
   print "\n";
   print "  <Directory /group/*/Homepage/>\n";
-  print "    Order allow,deny\n";
   print "    Allow from all\n";
   print "    AuthType Basic\n";
   print "    AuthName \"Please sign-in with your IServ account to access this homepage\"\n";
@@ -79,7 +95,22 @@ sub external_auth() {
   print "    AuthExternal iserv\n";
   print "    # Require LAN ip or login\n";
   print "    <RequireAny>\n";
-  print "      Require valid-user\n";
+  print "      <RequireAll>\n";
+  
+  print "        # only allow group homepages in ssl cert\n";
+  my @ssl_groups = uniq(IServ::DB::SelectCol "SELECT 'admins' UNION SELECT act FROM group_flag_assign WHERE flag = ".
+    "'hp_ssl_cert' AND act NOT IN (SELECT act FROM groups WHERE deleted IS NULL AND act IN ".
+    "(SELECT act FROM groups_flag WHERE flag = ".
+    "'hp_from_inet'))");
+
+  print "        Require expr %{HTTP_HOST} =~ /^(".join("|", @ssl_groups).").$Servername\$/\n";
+  for (@AliasDomains)
+  {
+    print "        Require expr %{HTTP_HOST} =~ /^(".join("|", @groups).").$_\$/\n";
+  }
+  print "        Require valid-user\n";
+  print "      </RequireAll>\n";
+  
   if (@groups > 0)
   {
     print "      # Allow access to always allowed group homepages\n";
@@ -90,18 +121,18 @@ sub external_auth() {
     }
   }
   print "      # Always allow www homepage\n";
-  print "      Require expr %{HTTP_HOST} =~ /www.$Servername/\n";
-  print "      Require expr %{HTTP_HOST} =~ /$Servername/\n";
-  print "      Require expr %{HTTP_HOST} =~ /iserv.$Servername/\n";
+  print "      Require expr %{HTTP_HOST} =~ /^www.$Servername\$/\n";
+  print "      Require expr %{HTTP_HOST} =~ /^$Servername\$/\n";
+  print "      Require expr %{HTTP_HOST} =~ /^iserv.$Servername\$/\n";
   for (@AliasDomains)
   {
-    print "      Require expr %{HTTP_HOST} =~ /www.$_/\n"; 
-    print "      Require expr %{HTTP_HOST} =~ /$_/\n";
-    print "      Require expr %{HTTP_HOST} =~ /iserv.$_/\n";
+    print "      Require expr %{HTTP_HOST} =~ /^www.$_\$/\n"; 
+    print "      Require expr %{HTTP_HOST} =~ /^$_\$/\n";
+    print "      Require expr %{HTTP_HOST} =~ /^iserv.$_\$/\n";
   }
   for (split /\n/, qx(netquery ip))
   {
-    print "      Require expr %{HTTP_HOST} =~ /$_/\n";
+    print "      Require expr %{HTTP_HOST} =~ /^$_\$/\n";
   }
   print "      # Allow access from LAN\n";
   foreach my $iprange (@LAN)
