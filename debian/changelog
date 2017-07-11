@@ -1,5 +1,13 @@
+stsbl-iserv-homepage (17.07.11-1) experimental; urgency=medium
+
+  [ Felix Jacobi ]
+  * Fixed "Use of uninitialized value $val".
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 11 Jul 2017 04:53:51 +0200
+
 stsbl-iserv-homepage (17.07.11-0) experimental; urgency=medium
 
+  [ Felix Jacobi ]
   * Added support for allowing authentificated access from outside of the LAN.
   * Added dependency on stsbl-iserv-apache-basic-authentification.
   * Always allow www homepage to prevent password during access of IDesk.
