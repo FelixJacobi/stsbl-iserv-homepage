@@ -12,6 +12,7 @@ my $UserHomepages = $conf->{UserHomepages};
 my $UserHomepagesLAN = $conf->{UserHomepagesLAN};
 my $HomepageExternalAuthAccess = $conf->{HomepageExternalAuthAccess};
 my $Servername = $conf->{Servername};
+my @AliasDomains = @{$conf->{AliasDomains}};
 my @LAN = @{$conf->{LAN}};
 
 sub group_config() {
@@ -52,8 +53,15 @@ sub external_auth() {
   print "    # Require LAN ip or login\n";
   print "    <RequireAny>\n";
   print "      Require valid-user\n";
-  print "      # Allow access to always allowed user homepages\n";
-  print "      Require expr %{HTTP_HOST} =~ /(".join("|", @users).").$Servername/\n";
+  if (@users > 0) 
+  {
+    print "      # Allow access to always allowed user homepages\n";
+    print "      Require expr %{HTTP_HOST} =~ /^(".join("|", @users).").$Servername\$/\n";
+    for (@AliasDomains)
+    {
+      print "      Require expr %{HTTP_HOST} =~ /^(".join("|", @users).").$_\$/\n";
+    }
+  }
   print "      # Allow access from LAN\n";
   foreach my $iprange (@LAN)
   {
@@ -72,12 +80,29 @@ sub external_auth() {
   print "    # Require LAN ip or login\n";
   print "    <RequireAny>\n";
   print "      Require valid-user\n";
-  print "      # Allow access to always allowed group homepages\n";
-  print "      Require expr %{HTTP_HOST} =~ /(".join("|", @groups).").$Servername/\n";
+  if (@groups > 0)
+  {
+    print "      # Allow access to always allowed group homepages\n";
+    print "      Require expr %{HTTP_HOST} =~ /^(".join("|", @groups).").$Servername\$/\n";
+    for (@AliasDomains)
+    {
+      print "      Require expr %{HTTP_HOST} =~ /^(".join("|", @groups).").$_\$/\n";
+    }
+  }
   print "      # Always allow www homepage\n";
   print "      Require expr %{HTTP_HOST} =~ /www.$Servername/\n";
   print "      Require expr %{HTTP_HOST} =~ /$Servername/\n";
   print "      Require expr %{HTTP_HOST} =~ /iserv.$Servername/\n";
+  for (@AliasDomains)
+  {
+    print "      Require expr %{HTTP_HOST} =~ /www.$_/\n"; 
+    print "      Require expr %{HTTP_HOST} =~ /$_/\n";
+    print "      Require expr %{HTTP_HOST} =~ /iserv.$_/\n";
+  }
+  for (split /\n/, qx(netquery ip))
+  {
+    print "      Require expr %{HTTP_HOST} =~ /$_/\n";
+  }
   print "      # Allow access from LAN\n";
   foreach my $iprange (@LAN)
   {
