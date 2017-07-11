@@ -1,3 +1,37 @@
+stsbl-iserv-homepage (17.07.11-0) experimental; urgency=medium
+
+  * Added support for allowing authentificated access from outside of the LAN.
+  * Added dependency on stsbl-iserv-apache-basic-authentification.
+  * Always allow www homepage to prevent password during access of IDesk.
+  * Updated l10n.
+  * Added hp_ssl_cert {priv,flag}.
+  * Added workaround for apache2 folder index icons.
+  * Updated build deps and rules.
+  * Fixed build deps.
+  * Improved apache configuration.
+  * apache_userhp_hpa: Removed unused variable.
+  * Updated debian files (removed install file, updated rules, removed docs file).
+  * Updated ssl cert flag description.
+  * Added iconf script to include user and group homepage to SSL cert.
+  * Added iconf/iservchk scripts for ssl cert support.
+  * Enable auth access only for homepages with ssl cert.
+  * Moved auth configuration beyond ssl redirection.
+
+  iserv: Das neue Update bringt diverse Verbesserungen mit: Zu einem kann nun 
+    mit dem Benutzerrecht "Benutzer-Homepage in SSL-Zertifikat einschließen" 
+    und dem gleichnamigen Gruppenmerkmal gesteuert werden, welche Benutzer-
+    und Gruppen-Homepages zusätzlich in das SSL-Zertifikat eingeschlossen werden
+    sollen. Zudem erlaubt die neue Einstellung "Zugriff auf die Homepages von
+    außerhalb des LANs mit Authentifizierung erlauben" in der
+    System-Konfiguration den Zugriff auf die Homepages aus dem Internet, wenn 
+    sie auf das LAN beschränkt sind. Dabei wird dann der IServ-Benutzername
+    und das IServ-Passwort per HTTP Basic Authentifizierung abgefragt, bevor
+    der Zugriff auf die Homepage erlaubt wird. Homepages, die über das
+    Merkmal/Recht immer für den Zugriff aus dem Internet freigeschaltet sind, 
+    sind von dieser Beschränkung entsprechend natürlich nicht betroffen.
+
+ -- Stadtteilschule Blankenese <repository@stsbl.de>  Tue, 11 Jul 2017 04:37:55 +0200
+
 stsbl-iserv-homepage (17.05.24-0) experimental; urgency=medium
 
   [ Felix Jacobi ]
