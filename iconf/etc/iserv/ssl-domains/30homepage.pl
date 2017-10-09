@@ -24,12 +24,12 @@ my $val = IServ::DB::SelectVal "SELECT invert FROM group_flag_def WHERE flag = ?
 if (defined $val and $val eq 1)
 {
   #warn "inverting is not supported for flag hp_ssl_cert.\n";
-  $sql = "SELECT act FROM users_priv WHERE privilege = ? AND act != ?";
+  $sql = "SELECT act FROM users_priv WHERE privilege = ? AND act != ? ORDER BY act";
   @sql_params = ("hp_ssl_cert", "admins");
 } else
 {
   $sql = "SELECT act FROM users_priv WHERE privilege = ? AND act != ?".
-     "UNION SELECT act FROM group_flag_assign WHERE flag = ? AND act != ?";
+     "UNION SELECT act FROM group_flag_assign WHERE flag = ? AND act != ? ORDER BY act";
   @sql_params = ("hp_ssl_cert", "admins", "hp_ssl_cert", "admins");
 }
 
