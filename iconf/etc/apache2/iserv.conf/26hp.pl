@@ -22,7 +22,7 @@ sub group_config() {
     # skip www group, it is always reachable
     next unless $groups[$i] ne "www";
     print "  <Directory /group/$groups[$i]/Homepage/>\n";
-    print "    Allow from all\n";
+    print "    Require all granted\n";
     print "  </Directory>\n";
     print "\n";
   }
@@ -32,7 +32,7 @@ sub user_config() {
   print "  # User Homepages which are always allowed via hp_from_inet privilege.\n";
   for (my $i = 0; $i < @users; $i++) {
     print "  <Directory /home/$users[$i]/Homepage/>\n";
-    print "    Allow from all\n";
+    print "    Require all granted\n";
     print "  </Directory>\n";
     print "\n";
   }
@@ -45,7 +45,6 @@ sub external_auth() {
   print "\n";
   print "  # Allow external access to user and group homepages with HTTP Basic Login.\n";
   print "  <Directory /home/*/Homepage/>\n";
-  print "    Allow from all\n";
   print "    AuthType Basic\n";
   print "    AuthName \"Please sign-in with your IServ account to access this homepage\"\n";
   print "    AuthBasicProvider external\n";
@@ -88,7 +87,6 @@ sub external_auth() {
   print "  </Directory>\n";
   print "\n";
   print "  <Directory /group/*/Homepage/>\n";
-  print "    Allow from all\n";
   print "    AuthType Basic\n";
   print "    AuthName \"Please sign-in with your IServ account to access this homepage\"\n";
   print "    AuthBasicProvider external\n";
