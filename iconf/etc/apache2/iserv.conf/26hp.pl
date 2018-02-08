@@ -51,15 +51,15 @@ sub external_auth() {
   print "    AuthExternal iserv\n";
   print "    # Require LAN ip or login\n";
   print "    <RequireAny>\n";
-  print "      <RequireAll>\n";
 
-  print "        # only allow group homepages in ssl cert\n";
   my @ssl_users = uniq(IServ::DB::SelectCol "SELECT act FROM users_priv WHERE privilege = ".
     "'hp_ssl_cert' AND act NOT IN (SELECT act FROM users WHERE deleted IS NULL AND act IN ".
     "(SELECT act FROM users_priv WHERE privilege = ".
     "'hp_from_inet'))");
   if (@ssl_users > 0)
   {
+    print "      <RequireAll>\n";
+    print "        # only allow group homepages in ssl cert\n";
     print "        Require expr %{HTTP_HOST} =~ /^(".join("|", @ssl_users).").$Servername\$/\n";
     for (@AliasDomains)
     {
