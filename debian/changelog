@@ -1,3 +1,14 @@
+stsbl-iserv-homepage (18.02.09-1) experimental; urgency=medium
+
+  * Fixed reproducibility of iconf template.
+  * Added license
+  * Updated copyright
+  * Added lintian overrides
+  * Switched to mod_authz_host for rules
+  * Fixed config order
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 09 Feb 2018 00:48:20 +0100
+
 stsbl-iserv-homepage (17.07.11-2) experimental; urgency=medium
 
   * Fixed syntax error.
