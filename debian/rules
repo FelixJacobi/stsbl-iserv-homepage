@@ -6,6 +6,5 @@
 	dh $@
 
 override_dh_install:
-	dh_copyright
 	dh_iservinstall3
 	dh_iservgitvars
