@@ -1,3 +1,9 @@
+stsbl-iserv-homepage (18.02.09-4) experimental; urgency=medium
+
+  * Updated debian/control
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 09 Feb 2018 00:58:05 +0100
+
 stsbl-iserv-homepage (18.02.09-3) experimental; urgency=medium
 
   * Updated debian/rules again
