@@ -2,8 +2,9 @@ Source: stsbl-iserv-homepage
 Section: misc
 Priority: extra
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
-Build-Depends: debhelper (>= 10), iserv3-dev
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 10)
+Build-Depends-Indep: iserv3-dev
+Standards-Version: 4.1.3.0
 Homepage: https://it.stsbl.de/documentation/mods/stsbl-iserv-homepage
 
 Package: stsbl-iserv-homepage
@@ -12,7 +13,8 @@ Depends: ${misc:Depends}
   ${perl:Depends},
   iserv-portal,
   stsbl-iserv-apache-basic-authentification,
-Conflicts: iserv-hpa,
+Conflicts:
+  iserv-hpa,
 Xb-Private-Iserv-Revision: ${iserv:Revision} 
 Description: Homepage-Modul für IServ
  Das Homepage-Modul wertet die in den Portalserver eingebaute IServ Benutzer-
