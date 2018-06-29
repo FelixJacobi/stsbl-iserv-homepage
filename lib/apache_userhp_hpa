@@ -62,8 +62,8 @@ while (<STDIN>)
   }
   elsif ($q != 1)
   {
-    # apache output: 403 Forbidden
-    print "/etc/debian_version\n";
+    # Trigger default value
+    print "NULL\n";
   }
   else
   {
