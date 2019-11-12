@@ -142,7 +142,7 @@ sub external_auth() {
   print "\n";
 }
 
-group_config() unless @groups < 1 or $UserHomepages == 0;
-user_config() unless @users < 1 or $UserHomepages == 0;
+group_config() unless @groups < 1 or not $UserHomepages;
+user_config() unless @users < 1 or not $UserHomepages ;
 external_auth() if $HomepageExternalAuthAccess and $UserHomepages
   and $UserHomepagesLAN;
