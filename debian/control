@@ -16,7 +16,7 @@ Depends: ${misc:Depends}
 Conflicts:
   iserv-hpa,
 Xb-Private-Iserv-Revision: ${iserv:Revision} 
-Description: Homepage-Modul für IServ
+Description: Homepage-Modul für IServ (Veraltet)
  Das Homepage-Modul wertet die in den Portalserver eingebaute IServ Benutzer-
  und Gruppen-Homepagefunktion um zusätzliche Funktionen auf.
  .
