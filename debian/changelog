@@ -1,3 +1,19 @@
+stsbl-iserv-homepage (19.11.13-1) stable; urgency=medium
+
+  * Updated packaging
+  * apache_userhp_hpa: Return NULL on unknown homepage
+  * Updated build rules for webpack support
+  * Bumped copyright
+  * Fixed Iconf template printing an error
+  * Deprecated package
+
+  iserv: Das Modul hat seit der Abschaltung der
+    Benutzer-Homepage-Funktionalität von IServ keine Funktionalität mehr. Die
+    Weiterentwicklung wurde entsprechend eingestellt. Wir empfehlen Ihnen
+    daher das Modul unter Verwaltung » System » Pakete zu deinstallieren.
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Wed, 13 Nov 2019 06:18:18 +0100
+
 stsbl-iserv-homepage (18.02.09-5) experimental; urgency=medium
 
   * Updated debian/control description
