@@ -30,5 +30,6 @@ Description: Homepage-Modul für IServ
  Die Funktion für die Nutzung von PHP auf Benutzer- und Gruppenhomepages
  wurde in ein separates Modul ausgelagert.
  .
- Hinweis: Das Modul hat seit der Abschaltung der Benutzer-Homepage-Funktionalität von IServ keine Funktionalität mehr.
+ Hinweis: Das Modul hat seit der Abschaltung der
+ Benutzer-Homepage-Funktionalität von IServ keine Funktionalität mehr.
 Tag: suite::iserv:portal, role::plugin, implemented-in::perl, status::deprecated
