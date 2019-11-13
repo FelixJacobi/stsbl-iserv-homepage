@@ -1,10 +1,10 @@
 Source: stsbl-iserv-homepage
 Section: misc
-Priority: extra
+Priority: optional
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
 Build-Depends: debhelper (>= 10)
 Build-Depends-Indep: iserv3-dev
-Standards-Version: 4.1.3
+Standards-Version: 4.4.3
 Homepage: https://it.stsbl.de/documentation/mods/stsbl-iserv-homepage
 
 Package: stsbl-iserv-homepage
@@ -29,4 +29,6 @@ Description: Homepage-Modul für IServ
  Dieses Paket ersetzt das alte Modul IServ Homepages (erweitert) (iserv-hpa).
  Die Funktion für die Nutzung von PHP auf Benutzer- und Gruppenhomepages
  wurde in ein separates Modul ausgelagert.
-Tag: suite::iserv:portal, role::plugin, implemented-in::perl
+ .
+ Hinweis: Das Modul hat seit der Abschaltung der Benutzer-Homepage-Funktionalität von IServ keine Funktionalität mehr.
+Tag: suite::iserv:portal, role::plugin, implemented-in::perl, status::deprecated
