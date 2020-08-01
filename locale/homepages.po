@@ -1,0 +1,99 @@
+msgid ""
+msgstr ""
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: config/80homepages
+msgid ""
+"Allow access to the homepages from outside of the LAN with Authentification"
+msgstr ""
+"Zugriff auf die Homepages von außerhalb des LANs mit Authentifizierung "
+"erlauben"
+
+#: priv/homepages
+msgid "Group Homepage always reachable from internet"
+msgstr "Gruppenhomepage immer aus dem Internet erreichbar"
+
+#: priv/homepages
+msgid "Group Homepage enabled"
+msgstr "Gruppenhomepage aktiviert"
+
+#: priv/homepages
+msgid "Include Group Homepage in SSL certificate"
+msgstr "Gruppen-Homepage in SSL-Zertifikat einschließen"
+
+#: priv/homepages
+msgid "Include User Homepage in SSL certificate"
+msgstr "Benutzer-Homepage in SSL-Zertifikat einschließen"
+
+#: config/80homepages
+msgid "Module: User and Group Homepages"
+msgstr "Modul: Benutzer- und Gruppenhomepages"
+
+#: config/80homepages
+msgid ""
+"The access to the homepages from outside of the LAN will granted, but will "
+"be protected with IServ account and password. This setting will only have "
+"effect on domains covered by the SSL certificate. This setting will not take "
+"effect if the access is not limited to the LAN or the homepages are already "
+"disabled."
+msgstr ""
+"Der Zugriff auf die Homepages von außerhalb des LANs wird gestattet, aber "
+"mit IServ-Account und Passwort geschützt. Diese Einstellung ist nur für "
+"Domains, die im SSL-Zertifikat eingeschlossen sind, wirksam. Diese "
+"Einstellung hat keine Auswirkung, wenn der Zugriff nicht auf das LAN "
+"beschränkt ist oder die Homepages bereits deaktiviert sind."
+
+#: priv/homepages
+msgid ""
+"The homepages of the groups with this setting are always reachable from "
+"internet independently from the limitation of homepages to the LAN."
+msgstr ""
+"Die Homepages der Gruppen mit dieser Einstellung sind immer aus dem Internet "
+"unabhängig von der Limitierung von Homepages auf das LAN."
+
+#: priv/homepages
+msgid ""
+"The homepages of the users with this privilege are always reachable from "
+"internet independently from the limitation of homepages to the LAN."
+msgstr ""
+"Die Homepages der Benutzer mit diesem Recht sind immer aus dem Internet "
+"erreichbar unabhängig von der Limitierung von Homepages auf das LAN."
+
+#: priv/homepages
+msgid ""
+"The host names of the Homepages of the groups will included in the SSL "
+"certificate as alternative name. This flag does not support the setting "
+"\"All groups except the following\"."
+msgstr ""
+"Die Hostnamen der Gruppen-Homepages werden im SSL-Zertifikat als alternative "
+"Namen eingeschlossen. Dieses Merkmal unterstützt nicht die Einstellung "
+"\"Alle Gruppen außer den folgenden\"."
+
+#: priv/homepages
+msgid ""
+"Use this privilege to control wether a user's homepage is reachable or not."
+msgstr ""
+"Benutzen Sie dieses Recht, um zu steuern wessen Homepage erreichbar ist oder "
+"nicht."
+
+#: priv/homepages
+msgid ""
+"Use this setting to control wether a group's homepage is reachable or not."
+msgstr ""
+"Benutzen Sie diese Einstellung, um zu steuern ob die Homepage einer Gruppe "
+"erreichbar ist oder nicht."
+
+#: priv/homepages
+msgid "User Homepage always reachable from internet"
+msgstr "Benutzerhomepage immer aus dem Internet erreichbar"
+
+#: priv/homepages
+msgid "User Homepage enabled"
+msgstr "Benutzerhomepage aktiviert"
+
+#: priv/homepages
+msgid "User and Group Homepages"
+msgstr "Benutzer- und Gruppenhomepages"

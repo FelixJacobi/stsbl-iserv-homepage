@@ -1,0 +1,93 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-02 01:07+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: config/80homepages
+msgid ""
+"Allow access to the homepages from outside of the LAN with Authentification"
+msgstr ""
+
+#: priv/homepages
+msgid "Group Homepage always reachable from internet"
+msgstr ""
+
+#: priv/homepages
+msgid "Group Homepage enabled"
+msgstr ""
+
+#: priv/homepages
+msgid "Include Group Homepage in SSL certificate"
+msgstr ""
+
+#: priv/homepages
+msgid "Include User Homepage in SSL certificate"
+msgstr ""
+
+#: config/80homepages
+msgid "Module: User and Group Homepages"
+msgstr ""
+
+#: config/80homepages
+msgid ""
+"The access to the homepages from outside of the LAN will granted, but will "
+"be protected with IServ account and password. This setting will only have "
+"effect on domains covered by the SSL certificate. This setting will not take "
+"effect if the access is not limited to the LAN or the homepages are already "
+"disabled."
+msgstr ""
+
+#: priv/homepages
+msgid ""
+"The homepages of the groups with this setting are always reachable from "
+"internet independently from the limitation of homepages to the LAN."
+msgstr ""
+
+#: priv/homepages
+msgid ""
+"The homepages of the users with this privilege are always reachable from "
+"internet independently from the limitation of homepages to the LAN."
+msgstr ""
+
+#: priv/homepages
+msgid ""
+"The host names of the Homepages of the groups will included in the SSL "
+"certificate as alternative name. This flag does not support the setting "
+"\"All groups except the following\"."
+msgstr ""
+
+#: priv/homepages
+msgid ""
+"Use this privilege to control wether a user's homepage is reachable or not."
+msgstr ""
+
+#: priv/homepages
+msgid ""
+"Use this setting to control wether a group's homepage is reachable or not."
+msgstr ""
+
+#: priv/homepages
+msgid "User Homepage always reachable from internet"
+msgstr ""
+
+#: priv/homepages
+msgid "User Homepage enabled"
+msgstr ""
+
+#: priv/homepages
+msgid "User and Group Homepages"
+msgstr ""
