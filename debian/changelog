@@ -1,3 +1,10 @@
+stsbl-iserv-homepage (20.08.02-1) testing; urgency=medium
+
+  * Bumped copyright
+  * Updated locale handling to use genpo
+
+ -- Felix Jacobi <Felix@jacobi-hamburg.net>  Sun, 02 Aug 2020 06:42:29 +0200
+
 stsbl-iserv-homepage (19.11.13-2) stable; urgency=medium
 
   * Fixed package title
